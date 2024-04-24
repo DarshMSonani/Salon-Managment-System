@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Maruti X</title>
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!--  Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="favicon_io (1)/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="favicon_io (1)/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+            href="favicon_io (1)/apple-touch-icon.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <!-- Google Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+            rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css"
+            rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <% if(data.length){ %>
+        <div class="alert alert-warning alert-dismissible fade show"
+            role="alert">
+            <strong>Holy guacamole!</strong> You should check in on some of
+            those fields below.
+            <button type="button" class="close" data-dismiss="alert"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <%}%>
+        <div class="wapper">
+
+            <div class="form-box  login">
+                <h2>Login</h2>
+                <form action="/login" method="post">
+                    <div class="input-box">
+                        <span class="iocn">
+                            <ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required name="email">
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="iocn">
+                            <ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required name="password">
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Remember Me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                        <p>Don't have an account?<a href="/register"
+                                class="register-link"> Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Font Awosome -->
+        <script src="https://kit.fontawesome.com/fb8d4d1a1f.js"
+            crossorigin="anonymous"></script>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

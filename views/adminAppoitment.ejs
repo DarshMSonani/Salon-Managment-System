@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous">
+
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="../favicon_io (1)/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="../favicon_io (1)/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+            href="../favicon_io (1)/android-chrome-192x192.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+
+        <div class="container mt-5">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover appointmentTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">People</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Appoitment Type</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total Price</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+
+                    <%if(!data.length){%>
+                    <h1 class="text-center">No Appoitment Yet</h1>
+                    <%}%>
+                    <tbody class="dataTable">
+                        <% var i=1 %>
+                        <% data.forEach((item)=> { %>
+                        <title><%= item.appoitmentType %> - Maruti X</title>
+                        <tr>
+                            <td>
+                                <%= i++ %>
+                            </td>
+                            <td>
+                                <%= item.userName %>
+                            </td>
+                            <td>
+                                <%= item.people %> People
+                            </td>
+                            <td>
+                                <% function formatDate(dateString) { %>
+                                <% const date=new Date(dateString); %>
+                                <% const day=date.getDate(); %>
+                                <% const month=date.getMonth() + 1; %>
+                                <% const year=date.getFullYear(); %>
+                                <% const formattedDay=day < 10 ? '0' + day :
+                                day; %>
+                                <% const formattedMonth=month < 10 ? '0' + month
+                                :
+                                month; %>
+                                <%= formattedDay + '/' + formattedMonth + '/' +
+                                year%>
+                                <% } %>
+                                <%= formatDate(item.date) %>
+                            </td>
+                            <td>
+                                <%function tConvert (time) {%>
+                                <% time=time.toString ().match
+                                (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) ||
+                                [time];%>
+
+                                <%if (time.length> 1) { %>
+                                <%time=time.slice (1);%>
+                                <%time[5]=+time[0] < 12 ? 'AM' : 'PM';%>
+                                <%time[0]=+time[0] % 12 || 12; // Adjust hours%>
+                                <%}%>
+                                <%return time.join ('');%>
+                                <%}%>
+
+                                <%= tConvert (item.time);%>
+                            </td>
+                            <td>
+                                <%= item.phoneNumber %>
+                            </td>
+                            <td>
+                                <%= item.appoitmentType %>
+                            </td>
+                            <td>
+                                <%= item.price %>
+                            </td>
+                            <td>
+                                <%= item.totalPrice %>
+                            </td>
+                            <!-- <td>
+                                <%if(item.status == "pending") {%>
+                                <form action="/accept/<%= item.id %>">
+                                    <input type="hidden" name="status"
+                                        value="accept">
+                                    <h1>Hello</h1>
+                                </form>
+                                <%}%>
+                            </td> -->
+                            <td>
+                                <form action="/deleteAdminAppoitment/<%= item.id %>"
+                                    method="post"
+                                    class="d-inline">
+                                    <button class="btn" type="submit"> <i
+                                            class="fas fa-trash text-danger"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://kit.fontawesome.com/fb8d4d1a1f.js"
+            crossorigin="anonymous"></script>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
