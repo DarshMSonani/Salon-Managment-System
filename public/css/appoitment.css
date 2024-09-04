@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+.main-form {
+    border: #fff;
+}
+
+.form {
+    display: none;
+    /* border: 1px solid #D5B981; */
+    display: flex;
+    align-items: center;
+    color: #D5B981;
+}
+
+
+.form-text {
+    text-align: center;
+    color: #D5B981;
+    margin: 0 0 40px 0;
+}
+
+.form-text h1 span img {
+    margin: 0 10px;
+
+}
+
+.form-text h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.form-text p {
+    font-size: large;
+}
+
+.main-form div {
+    margin: auto;
+    width: 300px;
+    /* display: inline-block; */
+}
+
+.main-form div input {
+    width: 100%;
+    background: none;
+    color: #D5B981;
+    font-size: 20px;
+    outline: none;
+    padding: 3px 0 3px 10px;
+    margin-top: 10px;
+}
+
+.main-form div select {
+    width: 104%;
+    background: none;
+    font-size: 20px;
+    outline: none;
+    padding: 3px 0 3px 10px;
+    margin-top: 10px;
+}
+
+.main-form div span {
+    width: 100%;
+    font-size: 25px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    /* Change the color */
+    filter: invert(82%) sepia(8%) saturate(1501%) hue-rotate(298deg) brightness(91%) contrast(50%);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    /* Change the color */
+    filter: invert(82%) sepia(8%) saturate(1501%) hue-rotate(298deg) brightness(91%) contrast(50%);
+}
+
+.people {
+    color: #D5B981;
+}
+
+.submit {
+    letter-spacing: 1px;
+    position: relative;
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #D5B981;
+    border: 2px solid #D5B981;
+    background: none;
+    transition: .3s;
+    border-radius: 10px;
+    /* left: 110%; */
+}
+
+.submit:hover {
+    /* color: #D5B981; */
+    background: #1d2434;
+}
+
+.dataTable {
+    background-color: azure;
+}
+
+@media screen and (max-width:710px) {
+    .main-form {
+        text-align: center;
+    }
+
+    .submit {
+        left: 0;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .main-form {
+        text-align: center;
+    }
+
+    .submit {
+        left: 0;
+    }
+}
